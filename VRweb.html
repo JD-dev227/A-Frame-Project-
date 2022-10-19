@@ -1,0 +1,198 @@
+
+
+<head>
+    <script src="https://unpkg.com/aframe-look-at-component@0.5.1/dist/aframe-look-at-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-animation-component@^4.1.2/dist/aframe-animation-component.min.js"></script>
+    <script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
+    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@^3.0.0/dist/aframe-event-set-component.min.js"></script>
+    
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+    
+    
+    <title>Naruto </title>
+    <script src="script.js"></script>
+ 
+</head>
+<body>
+    <a-scene physics="gravity:  -9.8; restitution: 2.4"  >
+
+    <a-box position ="-8  0.5 3"
+            color ="white"
+            mylistener src="#home">
+      </a-box>
+      <!-- changeing background -->
+      <a-box position ="-8 0.5 5"
+        color ="white"
+        night
+        src="#sunnight" >
+      </a-box>
+   
+      
+      <a-box position="10 5 -4"
+      color="black"
+      width="6"
+      height="2"
+      rotation=" 90 90 0"
+      
+      ></a-box>
+      <a-sphere
+      color="white"    
+      position=" 10  4  -5"  
+      width="3" 
+      height="2" 
+      grabbable
+      dynamic-body="linearDamping: 0.9"
+        > <a-animation attribute="rotation" to="0 360 0" repeat="indifinite" dur="3000">  </a-animation></a-sphere> 
+      <a-sphere
+        color="black"    
+        position=" 10  4 -2"  
+        width="3" 
+        height="2" 
+        grabbable
+        dynamic-body="linearDamping: 0.9"
+          > <a-animation attribute="rotation" to="0 360 0" repeat="indifinite" dur="3000">  </a-animation></a-sphere> 
+  
+      <!-- Text IN VR-->
+     <a-entity text="value :Home Page; color:white" position ="-8  1.5 1" scale="5 5 5" rotation="0 80 0"></a-entity>
+     <a-entity text="value :change sky; color:white" position ="-8  1.5 3" scale="5 5 5" rotation="0 80 0"></a-entity>
+     
+     <a-entity
+          id="myTarget"
+          scale="1 .001 1"
+          look-at="#camera"
+          text="color: black;align: center; value: Sasuke Uchiha!; width: 6; wrap-count: 10"
+          animation__1="startEvents: in;property: scale; dur: 200; from: 1 .001 7; to: 1 1 1"
+          animation__2="startEvents: out;property: scale; dur: 200; from: 1 1 1; to: 1 .001 1"
+        ></a-entity>
+      <a-entity
+          id="myGara"
+          scale="1 .001 1"
+          look-at="#camera"
+          text="color: black;align: center; value:  Gaara Yuzawa!; width: 6; wrap-count: 10"
+          animation__1="startEvents: in;property: scale; dur: 200; from: 1 .001 7; to: 1 1 1"
+          animation__2="startEvents: out;property: scale; dur: 200; from: 1 1 1; to: 1 .001 1"
+          ></a-entity>
+
+      <a-entity
+          id="myShikamaru"
+          scale="1 .001 1"
+          look-at="#camera"
+          text="color: black;align: center; value:  Shikamaru Nara!; width: 6; wrap-count: 10"
+          animation__1="startEvents: in;property: scale; dur: 200; from: 1 .001 7; to: 1 1 1"
+          animation__2="startEvents: out;property: scale; dur: 200; from: 1 1 1; to: 1 .001 1"
+      ></a-entity>
+      <a-entity
+          id="myObito"
+          scale="1 .001 1"
+          look-at="#camera"
+          text="color: black;align: center; value:  Obito Uchiha!; width: 6; wrap-count: 10"
+          animation__1="startEvents: in;property: scale; dur: 200; from: 1 .001 7; to: 1 1 1"
+          animation__2="startEvents: out;property: scale; dur: 200; from: 1 1 1; to: 1 .001 1"
+      ></a-entity>
+      <a-entity
+          id="myKakashi"
+          scale="1 .001 1"
+          look-at="#camera"
+          text="color: black;align: center; value:  Kakashi Hatake!; width: 6; wrap-count: 10"
+          animation__1="startEvents: in;property: scale; dur: 200; from: 1 .001 7; to: 1 1 1"
+          animation__2="startEvents: out;property: scale; dur: 200; from: 1 1 1; to: 1 .001 1"
+      ></a-entity>
+
+      <!--Camera-->
+    <a-camera position="0 2 7" look-controls="pointerLockEnabled: true">
+      <a-cursor > </a-cursor>   
+   </a-camera> 
+   
+
+   
+    <!--Assests-->
+    <a-assets>
+      <a-asset-item id="messageText" src="msg.html"></a-asset-item>
+      <!--images for vr objects-->
+      <img id="sky" src="images/SKY.NARUTO.jpg">
+      <img id="ground" src="images/woodenfloor.jpg">
+      <img id="saske" src="images/saske.jpg">
+      <img id="gara" src="images/gara.jpg">
+      <img id="kakashi" src="images/kakashi.jpg">
+      <img id="home" src="images/home.png" >
+      <img id="obito" src="images/obito.jpg">
+      <img id="shikamaru" src="images/shikamaru.jpg" >
+      <img id="sunnight" src="images/sunnight.png" >
+      <img id="night" src="images/night.jpg" >
+      <img id="wall" src="images/wall.jpg" >
+      <img id="speaker" src="images/speakers.jpg">
+
+      <img id="stop" src="images/stopicon.jpg">
+      <img id="play" src="images/play.png">
+      <img id="pause" src="images/pause.png.crdownload">
+
+      <!--Video--> 
+      <video id="narutoshort" src="Audio/NARUTO SHIPPUDEN Uncut Set 28 - Official Trailer.mp4" loop="true"></video>
+
+      <!--Audio-->
+      <audio  id="Girei" src="Audio/Naruto Shippuden - Girei (Pain's Theme Song).mp3">  </audio>
+      <audio  id="tragic" src="Audio/Naruto Shippuden OST I - Tragic.mp3"></audio>
+      
+    </a-assets>
+
+
+    <!--objects-->
+    <a-box  static-body position="-6 1.5 -10" rotation="0 180 0"  width="2" height="2" src="#saske"  
+    name-on-hover="target: #myTarget" 
+    look-at="#camera"
+    animation="property: position;easing: easeInSine:true;dir: alternate;dur: 2000;to:-2 .2 -10"></a-box> 
+
+    <a-box  static-body position="2 1.5 -10" rotation="0 180 0"  width="2" height="2" src="#gara"
+    name-on-hover="target: #myGara" 
+    look-at="#camera"
+    animation="property: position;easing: easeInSine:true;dir: alternate;dur: 2000;to:-2 .2 -10"></a-box>  
+
+    <a-box static-body position="5 1.5 -10" rotation="0 180 0"  width="2" height="2" src="#kakashi"  
+    name-on-hover="target: #myKakashi" 
+    look-at="#camera"
+    animation="property: position;easing: easeInSine:true;dir: alternate;dur: 2000;to:-2 .2 -10"></a-box>  
+
+    <a-box staticc-body position="-0.5  1.5 -10" rotation="0 180 0"  width="2" height="2" src="#obito"
+    name-on-hover="target: #myObito" 
+    look-at="#camera"
+    animation="property: position;easing: easeInSine:true;dir: alternate;dur: 2000;to:-2 .2 -10"></a-box>  
+
+    <a-box  static-body position="-3 1.5 -10" rotation="0 180 0"  width="2" height="2" src="#shikamaru"
+    name-on-hover="target: #myShikamaru" 
+    look-at="#camera"
+    animation="property: position;easing: easeInSine:true;dir: alternate;dur: 2000;to:-2 .2 -10"></a-box> 
+
+    <!--stop/play sound-->
+    <a-cylinder   width="4" height="7"  src="#speaker" id="yellow" position="-8  2 -4" color="yellow"  
+      sound="src: #tragic; on:click  volume:1;
+      refDistance:4;
+      rolloffFactor:4" >
+      <!--play-->
+      <a-sphere src="#play" id="green" radius="0.60" position="-1  1  2"  play 
+      daynamic-body sound="src: #tragic; on:click" ></a-sphere>
+      <!--stop-->
+      <a-sphere  src="#stop" id="red" radius="0.60" position="-1  1 -2"  stop 
+      daynamic-body sound="src: #tragic; on:click" ></a-sphere>
+    </a-cylinder >
+
+
+    <a-video src="#narutoshort" width="8" height="4.5" position="-0 8 -12">
+     <!--play-pause video-->
+     <a-image id="videoControls" src="images/play.png" position="-0 -3 0" scale="0.5 0.5 1" play-pause></a-image> 
+
+    </a-video>
+  
+  
+
+      <a-plane position="0 0 -4" rotation="-90 0 0"  src="#ground"  static-body  scale="50 50 1" repeat="5 5 1" ></a-plane>
+      
+      <a-sky  src="#night"  id="night" ></a-sky>
+      <a-plane position="-0 1.5 -13.5 " rotation="0 0 0" width="25" height="25" src="#wall" static-body ></a-plane>
+      
+
+
+    </a-scene>
+
+</body>
+</html>
